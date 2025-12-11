@@ -1,0 +1,93 @@
+<div class="registro-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-8 col-lg-6 offset-md-2 offset-lg-3">
+        <div class="card">
+          <h2>Registro de Usuario</h2>
+          <form (ngSubmit)="registrar()">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label>Nombre Completo *</label>
+                  <input
+                    type="text"
+                    [(ngModel)]="nombre"
+                    name="nombre"
+                    class="form-control"
+                    placeholder="Juan Pérez">
+                  <span class="error" *ngIf="errores.nombre">{{errores.nombre}}</span>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label>Cédula *</label>
+                  <input
+                    type="text"
+                    [(ngModel)]="cedula"
+                    name="cedula"
+                    class="form-control"
+                    placeholder="12345678-9">
+                  <span class="error" *ngIf="errores.cedula">{{errores.cedula}}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label>Email *</label>
+                  <input
+                    type="email"
+                    [(ngModel)]="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="tu@email.com">
+                  <span class="error" *ngIf="errores.email">{{errores.email}}</span>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label>Teléfono *</label>
+                  <input
+                    type="tel"
+                    [(ngModel)]="telefono"
+                    name="telefono"
+                    class="form-control"
+                    placeholder="+56 9 1234 5678">
+                  <span class="error" *ngIf="errores.telefono">{{errores.telefono}}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Contraseña *</label>
+              <input
+                type="password"
+                [(ngModel)]="password"
+                name="password"
+                class="form-control"
+                placeholder="Contraseña segura">
+
+              <div class="password-validations">
+                <small [class.valid]="password.length >= 8">✓ Mínimo 8 caracteres</small>
+                <small [class.valid]="password.length <= 20">✓ Máximo 20 caracteres</small>
+                <small [class.valid]="tieneNumero(password)">✓ Al menos un número</small>
+                <small [class.valid]="tieneCaracterEspecial(password)">✓ Caracter especial (!@#$%^&*)</small>
+              </div>
+
+              <span class="error" *ngIf="errores.password">{{errores.password}}</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+
+            <div class="links">
+              <a routerLink="/login">Ya tengo cuenta</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,154 @@
+.registro-container {
+  min-height: 100vh;
+  /* Degradado consistente con el Login */
+   background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(5px);
+  max-width: 450px;
+  width: 100%;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 35px;
+  font-size: 28px;
+  font-weight: 700;
+  /* Borde consistente con el tema morado */
+  border-bottom: 2px solid #8f94fb;
+  padding-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  /* Color de label consistente con el tema morado */
+  color: #4e54c8;
+  font-size: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  /* Borde de enfoque consistente */
+  border-color: #4e54c8;
+  box-shadow: 0 0 0 3px rgba(78, 84, 200, 0.2);
+  background-color: white;
+}
+
+.password-validations {
+  margin-top: 10px;
+  padding: 12px;
+  /* Fondo muy claro de tema morado/azul */
+  background: #f0f0ff;
+  /* Borde de color de tema morado/azul */
+  border-left: 4px solid #8f94fb;
+  border-radius: 6px;
+}
+
+.password-validations small {
+  display: block;
+  color: #999;
+  font-size: 13px;
+  margin: 5px 0;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+.password-validations small.valid {
+  color: #2ecc71;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  /* Fondo de botón consistente */
+  background: #4e54c8;
+  color: white;
+  margin-top: 15px;
+  /* Sombra consistente */
+  box-shadow: 0 4px 10px rgba(78, 84, 200, 0.4);
+}
+
+.btn-primary:hover {
+  background: #3a40b3;
+  transform: translateY(-3px);
+  /* Sombra de hover consistente */
+  box-shadow: 0 8px 20px rgba(78, 84, 200, 0.5);
+}
+
+.links {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.links a {
+  /* Color de enlace consistente */
+  color: #4e54c8;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  text-decoration: underline;
+  /* Color de hover de enlace consistente */
+  color: #8f94fb;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 13px;
+  display: block;
+  margin-top: 5px;
+  font-weight: 500;
+}

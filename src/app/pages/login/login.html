@@ -1,0 +1,51 @@
+<div class="login-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4 offset-md-3 offset-lg-4">
+        <div class="card">
+          <h2>Iniciar Sesión</h2>
+          <form (ngSubmit)="login()">
+            <div class="form-group">
+              <label>Email</label>
+              <input
+                type="email"
+                [(ngModel)]="email"
+                name="email"
+                class="form-control"
+                placeholder="tu@email.com">
+              <span class="error" *ngIf="errores.email">{{errores.email}}</span>
+            </div>
+
+            <div class="form-group">
+              <label>Contraseña</label>
+              <div class="password-wrapper">
+                <input
+                  [type]="mostrarPassword ? 'text' : 'password'"
+                  [(ngModel)]="password"
+                  name="password"
+                  class="form-control"
+                  placeholder="Tu contraseña">
+                <button
+                  type="button"
+                  class="btn-eye"
+                  (click)="togglePassword()">
+                  {{mostrarPassword ? '🙈' : '👁️'}}
+                </button>
+              </div>
+              <span class="error" *ngIf="errores.password">{{errores.password}}</span>
+            </div>
+
+            <span class="error" *ngIf="errores.general">{{errores.general}}</span>
+
+            <button type="submit" class="btn btn-primary">Ingresar</button>
+
+            <div class="links">
+              <a routerLink="/registro">Registrarse</a>
+              <a routerLink="/recuperar">¿Olvidaste tu contraseña?</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
